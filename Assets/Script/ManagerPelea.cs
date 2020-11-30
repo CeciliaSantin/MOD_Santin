@@ -186,7 +186,7 @@ public class ManagerPelea : MonoBehaviour
 			enemigoActual = 28;
 
 			// Dragon Normal
-			switch (Random.Range (0, 6)) {
+			switch (Random.Range (0, 4)) {
 			case 0: 
 				// Dragoncito Agua
 				dragoncitoE1 = DRAGONCITO_ELECTRICO+DESFASAJE_ENEMIGOS;
@@ -202,12 +202,12 @@ public class ManagerPelea : MonoBehaviour
 			
 			}
 
-			if (Random.Range (0, 10) == 0) {
+			/*if (Random.Range (0, 10) == 0) {
 				if (dragoncitoE1 != -1) {
 					// Segundo Dragoncito Normal
 					dragoncitoE2 = DRAGONCITO_NORMAL+DESFASAJE_ENEMIGOS;
 				}
-			}
+			}*/
 
 		}
 
@@ -228,24 +228,24 @@ public class ManagerPelea : MonoBehaviour
 				break;
 			case 1: 
 				// Dragoncito Fuego
-				dragoncitoE1 = DRAGONCITO_FUEGO+DESFASAJE_ENEMIGOS;
+				dragoncitoE1 = DRAGONCITO_HIELO+DESFASAJE_ENEMIGOS;
 				break;
 			case 2: 
 				// Dragoncito Aire
-				dragoncitoE1 = DRAGONCITO_AIRE+DESFASAJE_ENEMIGOS;
+				dragoncitoE1 = DRAGONCITO_HIELO+DESFASAJE_ENEMIGOS;
 				break;
 			case 3: 
 				// Dragoncito Tierra
-				dragoncitoE1 = DRAGONCITO_TIERRA+DESFASAJE_ENEMIGOS;
+				dragoncitoE1 = DRAGONCITO_LAVA+DESFASAJE_ENEMIGOS;
 				break;
 			}
 
-			if (Random.Range (0, 10) == 0) {
+			/*if (Random.Range (0, 10) == 0) {
 				if (dragoncitoE1 != -1) {
 					// Segundo Dragoncito Normal
 					dragoncitoE2 = DRAGONCITO_NORMAL+DESFASAJE_ENEMIGOS;
 				}
-			}
+			}*/
 
 		}
 		if (Controlador.escenaPrevia == "DIEGO") {
@@ -273,12 +273,12 @@ public class ManagerPelea : MonoBehaviour
 				break;
 			}
 
-			if (Random.Range (0, 10) == 0) {
+			/*if (Random.Range (0, 10) == 0) {
 				if (dragoncitoE1 != -1) {
 					// Segundo Dragoncito Tierra
 					dragoncitoE2 = DRAGONCITO_TIERRA+DESFASAJE_ENEMIGOS;
 				}
-			}
+			}*/
 		}
 		if (Controlador.escenaPrevia == "ARIEL") {
 			// Dragon Ariel - Fuego
@@ -304,14 +304,14 @@ public class ManagerPelea : MonoBehaviour
 				break;
 			}
 
-			if (Random.Range (0, 10) == 0) {
+            /*if (Random.Range (0, 10) == 0) {
 				if (dragoncitoE1 != -1) {
 					// Segundo Dragoncito Fuego
 					dragoncitoE2 = DRAGONCITO_FUEGO+DESFASAJE_ENEMIGOS;
 				}
-			}
-		}
-		if (Controlador.escenaPrevia == "MAXIMILIANO") {
+			}*/
+        }
+        if (Controlador.escenaPrevia == "MAXIMILIANO") {
 			GameObject.FindGameObjectWithTag ("israel").SetActive (false);
 			GameObject.FindGameObjectWithTag ("ariel").SetActive (false);
 			GameObject.FindGameObjectWithTag ("diego").SetActive (false);
@@ -334,15 +334,17 @@ public class ManagerPelea : MonoBehaviour
 				break;
 			}
 
-			if (Random.Range (0, 10) == 0) {
+            /*if (Random.Range (0, 10) == 0) {
 				if (dragoncitoE1 != -1) {
 					// Segundo Dragoncito Aire
 					dragoncitoE2 = DRAGONCITO_AIRE+DESFASAJE_ENEMIGOS;
 				}
 			}
+            */
 
-		}
-		if (Controlador.escenaPrevia == "ISRAEL") {
+
+        }
+        if (Controlador.escenaPrevia == "ISRAEL") {
 			GameObject.FindGameObjectWithTag ("ariel").SetActive (false);
 			GameObject.FindGameObjectWithTag ("maximiliano").SetActive (false);
 			GameObject.FindGameObjectWithTag ("diego").SetActive (false);
@@ -365,12 +367,12 @@ public class ManagerPelea : MonoBehaviour
 				break;
 			}
 
-			if (Random.Range (0, 10) == 0) {
+			/*if (Random.Range (0, 10) == 0) {
 				if (dragoncitoE1 != -1) {
 					// Segundo Dragoncito Agua
 					dragoncitoE2 = DRAGONCITO_AGUA+DESFASAJE_ENEMIGOS;
 				}
-			}
+			}*/
 		}
 
 		foreach (var peleador in peleadores) {
@@ -525,10 +527,10 @@ public class ManagerPelea : MonoBehaviour
 										}
 */
 
-									
 
 
-										if (accion.nombre == "Curar") {
+
+            if (accion.nombre == "Curar") {
 											c = peleador.EjecutarAccion (accion, peleadores [ElegirAliado ()].transform);
 										} else { 
 											c = peleador.EjecutarAccion (accion, peleadores [ElegirEnemigo ()].transform);
