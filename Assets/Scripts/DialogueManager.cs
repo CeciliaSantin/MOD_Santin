@@ -27,8 +27,11 @@ public class DialogueManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		romance.Prepare ();
-		dialogue = "";
+		
+        romance = GameObject.Find("Video Player").GetComponent<VideoPlayer>();
+        romance.url = System.IO.Path.Combine(Application.streamingAssetsPath, "Amor.mp4");
+        romance.Prepare();
+        dialogue = "";
 		characterName = "Mateo";
 		pose = 0;
 		guion = GameObject.Find("DialogueParser").GetComponent<DialogueParser>();
@@ -78,10 +81,10 @@ public class DialogueManager : MonoBehaviour {
 		yield return new WaitForSeconds(11);
 		romance.Stop ();
 		animator.SetTrigger ("GANAR");
-		ganaste.enabled = true;
-		yield return new WaitForSeconds(5);
-		SceneManager.LoadScene (Random.Range(8,10));
-	}
+		ganaste.enabled = true; 
+        yield return new WaitForSeconds(5);
+        SceneManager.LoadScene("perfil" + Random.Range(8, 10).ToString());
+    }
 	IEnumerator Pelear() {
 		Debug.Log("PELEA");
 		preparateParaPelea.enabled = true;

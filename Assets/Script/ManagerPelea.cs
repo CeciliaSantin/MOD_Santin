@@ -70,7 +70,15 @@ public class ManagerPelea : MonoBehaviour
 
 	void Awake ()
 	{
-		if (singleton != null) {
+
+        ganaste = GameObject.Find("Video Ganaste").GetComponent<VideoPlayer>();
+        ganaste.url = System.IO.Path.Combine(Application.streamingAssetsPath, "dragonawinvideo.mp4");
+
+        perdiste = GameObject.Find("Video Perdiste").GetComponent<VideoPlayer>();
+        perdiste.url = System.IO.Path.Combine(Application.streamingAssetsPath, "dragonalosevideo.mp4");
+
+
+        if (singleton != null) {
 
 			Destroy (gameObject);
 			return;

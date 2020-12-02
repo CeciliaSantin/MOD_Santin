@@ -5,6 +5,7 @@ using System.Text;
 using System.IO;
 using System.Text.RegularExpressions;
 using UnityEngine.SceneManagement;
+using UnityEngine.Networking;
 
 public class DialogueParser : MonoBehaviour {
 
@@ -36,28 +37,30 @@ public class DialogueParser : MonoBehaviour {
 		}
 	}
 	List<DialogueLine> lines;
+    //private string result;
 
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
 
-		//string file = "Assets/Data/Dialogue1.tsv";
-		//string file = dialo1.text;
+        //string file = "Assets/Data/Dialogue1.tsv";
+        //string file = dialo1.text;
+        string sceneNum = SceneManager.GetActiveScene().name;
+        sceneNum = Regex.Replace (sceneNum, "[^0-9]", "");
+        string file = Path.Combine(Application.streamingAssetsPath, "Dialogue" + sceneNum + ".tsv");
 
-		string file = Application.streamingAssetsPath + "/Dialogue";
-		string sceneNum = SceneManager.GetActiveScene ().name;
-
-		sceneNum = Regex.Replace (sceneNum, "[^0-9]", "");
-		file += sceneNum;
-		file += ".tsv";
-
+        //file += sceneNum;
+		//file += ".tsv";
+        
 		lines = new List<DialogueLine>();
-		LoadDialogue (file);
+		
+        LoadDialogue(file);
 
-	}
-	
-	// Update is called once per frame
-	void Update () {
+    }
+
+
+    // Update is called once per frame
+    void Update () {
 		
 	}
 

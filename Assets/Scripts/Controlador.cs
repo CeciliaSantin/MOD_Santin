@@ -75,8 +75,9 @@ public class Controlador : MonoBehaviour {
 		}
 
 
-		Load(Application.streamingAssetsPath + "/Save.txt");
-		if(!ganaste){
+		//Load(Application.streamingAssetsPath + "/Save.txt");
+        Load(Path.Combine(Application.streamingAssetsPath, "Save.txt"));
+        if (!ganaste){
 			if (HijosGanados [0] && HijosGanados [1] && HijosGanados [2] && HijosGanados [3] && HijosGanados [4] && HijosGanados [5] && HijosGanados [6] && HijosGanados [7] && HijosGanados [8] && HijosGanados [9] && HijosGanados [10] && HijosGanados [11]) {
 				ganaste = true;
 				CantidadGanadas++;
@@ -146,16 +147,19 @@ public class Controlador : MonoBehaviour {
 	}
 
 	public static void Save(string filename) {
-		Debug.Log ("Save");
-				string line="";
-		StreamWriter writer = new StreamWriter(filename);
-		for (int j = 1; j < 12; j++) {
-			line += HijosGanados[j] + ";"; 
-		}
-		//Debug.Log (line);
-		writer.WriteLine(line);
-		writer.Close();
-	}
+        Debug.Log("Save");
+        string line = "";
+        StreamWriter writer = new StreamWriter(filename);
+        for (int j = 1; j < 12; j++)
+        {
+            line += HijosGanados[j] + ";";
+        }
+        //Debug.Log (line);
+        writer.WriteLine(line);
+        writer.Close();
+        PlayerPrefs.SetString("DragsGuardados", filename);
+        print(PlayerPrefs.GetString("DragsGuardados"));
+    }
 		
 	public static void GanarHijo(int cual) {
 		Controlador.HijosGanados[cual] = true;
@@ -168,9 +172,9 @@ public class Controlador : MonoBehaviour {
 				{ "Cual",  NombresDragoncitos[cual]}
 
 			});
-		
-		Save (Application.streamingAssetsPath + "/Save.txt");
-	}
+
+        Save(Path.Combine(Application.streamingAssetsPath, "Save.txt"));
+    }
 
 	public static void PederHijo(int cual) {
 		Controlador.HijosGanados[cual] = false;
@@ -183,9 +187,9 @@ public class Controlador : MonoBehaviour {
 				{ "Cual",  NombresDragoncitos[cual]}
 
 			});
-		
-		Save (Application.streamingAssetsPath + "/Save.txt");
-	}
+
+        Save(Path.Combine(Application.streamingAssetsPath, "Save.txt"));
+    }
 
 
 	int GetRandom (int min, int max)
@@ -250,7 +254,15 @@ public class Controlador : MonoBehaviour {
 
 	public void CambiarAtras(string nombre){
 
-		print("Cambiando a la escena " + nombre);
+        if (PlayerPrefs.HasKey("DragsGanados"))
+        {
+
+            Save(PlayerPrefs.GetString("DragsGuardados"));
+            print("2: " + System.IO.Path.Combine(Application.streamingAssetsPath, "Save.txt"));
+            print("1: " + PlayerPrefs.GetString("DragsGuardados"));
+        }
+
+        print("Cambiando a la escena " + nombre);
 	
 		// Voy a carga el video de presentacion del juego y luego a perfil1::: JUGAR
 		if (nombre == "portada") { 
