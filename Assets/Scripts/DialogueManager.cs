@@ -138,7 +138,11 @@ public class DialogueManager : MonoBehaviour {
 				if(SceneManager.GetActiveScene().name == "Scene6"){
 					Controlador.escenaPrevia = "SANTI";
 				}
-				resultado = "Pelea";
+                if (SceneManager.GetActiveScene().name == "Scene7")
+                {
+                    Controlador.escenaPrevia = "FABIO";
+                }
+                resultado = "Pelea";
 
 			Analytics.CustomEvent ("DialogosFin", new Dictionary<string, object> {
 				{ "Resultado", resultado },
@@ -176,6 +180,10 @@ public class DialogueManager : MonoBehaviour {
 			if (SceneManager.GetActiveScene ().name == "Scene6") {
 				Controlador.GanarHijo (posiblesHijos[Random.Range(21,24)]);
 				Controlador.escenaPrevia = "SANTI";
+			}
+            if (SceneManager.GetActiveScene ().name == "Scene7") {
+				Controlador.GanarHijo (posiblesHijos[Random.Range(21,24)]);
+				Controlador.escenaPrevia = "FABIO";
 			}
 
 			resultado = "Ganaste";

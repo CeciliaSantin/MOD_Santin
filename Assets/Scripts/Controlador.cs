@@ -27,7 +27,7 @@ public class Controlador : MonoBehaviour {
 
 	public static string[] NombresDragoncitos = new string[] { "", "ARENA", "TIERRA" , "ELECTRICO" , "METAL" , "AGUA" , "AIRE" , "LODO" , "LAVA" , "NORMAL" , "HIELO" , "FUEGO" };
 
-	public static string[] NombresPerfiles = new string[] { "", "ANGEL", "ANGEL" , "MATEO" , "MATEO" ,  "DIEGO" , "DIEGO" ,  "MAXIMILIANO" , "MAXIMILIANO" ,  "ISRAEL" , "ISRAEL" , "SANTI" , "SANTI" , "" , "" , "PANCHY" , "FERNANDO" , "LEONARDO" , "ALEXIS" , "ANIBAL" , "FABIO" , "FELIPE" , "FAUSTO" , "ROBERTO" , "PABLO" , "LUCIA" };
+	public static string[] NombresPerfiles = new string[] { "", "ANGEL", "ANGEL" , "MATEO" , "MATEO" ,  "DIEGO" , "DIEGO" ,  "MAXIMILIANO" , "MAXIMILIANO" ,  "ISRAEL" , "ISRAEL" , "SANTI" , "SANTI", "FABIO", "FABIO", "" , ""  , "FERNANDO" , "LEONARDO" , "ALEXIS" , "ANIBAL" , "PANCHY" , "FELIPE" , "FAUSTO" , "ROBERTO" , "PABLO" , "LUCIA" };
 
 	public static int cantidadCoincidencias = 0 ;
 
@@ -60,7 +60,8 @@ public class Controlador : MonoBehaviour {
 		
 		StartTime = Time.time;
 
-		if(SceneManager.GetActiveScene().name == "perfil1" || SceneManager.GetActiveScene().name == "perfil2" || SceneManager.GetActiveScene().name == "perfil3"|| SceneManager.GetActiveScene().name == "perfil4"|| SceneManager.GetActiveScene().name == "perfil5"|| SceneManager.GetActiveScene().name == "perfil6"){
+		if(SceneManager.GetActiveScene().name == "perfil1" || SceneManager.GetActiveScene().name == "perfil2" || SceneManager.GetActiveScene().name == "perfil3"|| SceneManager.GetActiveScene().name == "perfil4"|| SceneManager.GetActiveScene().name == "perfil5"|| SceneManager.GetActiveScene().name == "perfil6" || SceneManager.GetActiveScene().name == "perfil7")
+        {
 			if (ContarHijos (HijosGanados) > 0 && ContarHijos (HijosGanados) < 2) {
 				animator.SetTrigger ("SeleccHijo");
 				dragoncito1 = -1;

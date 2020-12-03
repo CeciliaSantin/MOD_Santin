@@ -1,0 +1,14 @@
+﻿ID	Preguntas	Sprite	Opcion 1	Resultado 1	Opcion 2	Resultado 2	Opcion 3	Resultado 3
+1	Hola, soy Fabio. ¿Hace mucho llegaste?	1	No, llegué recién	2	Si, ya me estaba por ir	2	Hace un ratito	2
+2	Bueno. ¿Quieres tomar un helado?	1	No, odio el helado	8	Suena bien	3	Mejor charlemos	3
+3	¿Te gusta escribir?	1	No es lo mio	8	Me encanta. Leí en tu perfíl que también te gusta	7	Lo normal. ¿Y a ti?	7
+4	Podría ser. ¿Pero no te gustan otras cosas? Como programar o hacer animaciones 	1	No creo que tengamos los mismos gustos	11	¿Me estás entrevistando para tu empresa?	5	Me gusta	13
+5	Si quieres unirte envía tu curriculum (Se ríe)	1	¿No me vas a dar trato preferencial si te invito un café?	13	Entonces no me interesa, me voy a casa.	-1	Conozco al jefe, seguro me contratan (Risas)	13
+6	No merezco que me traten así. 	1	Cierra el hocico!	-1	No me importa lo que pienses	-1	Te trato como quiero	-1
+7	Si, estoy escribiendo un libro de consejos para dragones que quieran crear su primera empresa	1	Parece interesante. ¿Me darías clases particulares? (Le guiñas un ojo)	13	Ah...Suena aburrido...	11	¿Qué consejos me darías a mi?	13
+8	Entiendo. ¿Y que te gusta hacer?	1	¿Dormir cuenta?	4	Pasar el rato en redes sociales	9	Jugar videojuegos. ¿Te gustan?	9
+9	Ah...No es lo mio. Siento que es una pérdida de tiempo. ¿No sientes que te vuelve improductiva?	1	Ayuda a relajarnos	10	Esta cita es una pérdida de tiempo...	11	No realmente	12
+10	Es un buen punto. 	1	¿Quieres que nos relajemos en otro sitio?	12	Siempre tengo razón	12	Deberías dejar de pensar en el trabajo todo el tiempo	4
+11	Entonces te invito a que te marches	1	¡No me digas que hacer!	-1	Era una broma. ¿Me disculpas?	12	Solo si es a tu casa	12
+12	No se, creo que me cuesta conectar contigo	1	Eres un idiota. Conecta con mi puño.	-1	Recién empezamos a hablar, conectar lleva tiempo	4	¿Conectar? Solo quiero que me pagues el alquiler	6
+13	Antes me gustaría ver tus habilidades y conocerte mejor. ¿Quieres ir a otro lado?...	1	Vamos	0	No, no creo que seas mi tipo.	6	Compremos algo para comer antes	0
