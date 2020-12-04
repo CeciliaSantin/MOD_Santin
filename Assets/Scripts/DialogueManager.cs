@@ -138,8 +138,7 @@ public class DialogueManager : MonoBehaviour {
 				if(SceneManager.GetActiveScene().name == "Scene6"){
 					Controlador.escenaPrevia = "SANTI";
 				}
-                if (SceneManager.GetActiveScene().name == "Scene7")
-                {
+                if (SceneManager.GetActiveScene().name == "Scene7"){
                     Controlador.escenaPrevia = "FABIO";
                 }
                 resultado = "Pelea";

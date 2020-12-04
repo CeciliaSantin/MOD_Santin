@@ -191,7 +191,8 @@ public class ManagerPelea : MonoBehaviour
 			GameObject.FindGameObjectWithTag ("diego").SetActive (false);
 			GameObject.FindGameObjectWithTag ("ariel").SetActive (false);
 			GameObject.FindGameObjectWithTag ("mateo").SetActive (false);
-			enemigoActual = 28;
+            GameObject.FindGameObjectWithTag ("fabio").SetActive (false);
+            enemigoActual = 28;
 
 			// Dragon Normal
 			switch (Random.Range (0, 4)) {
